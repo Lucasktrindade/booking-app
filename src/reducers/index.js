@@ -7,19 +7,18 @@ function fetchHouses (state = [], action) {
   }
   return state
 }
-function HousesReducer() {
-  return  [
-      {"thumbnail": "https://via.placeholder.com/120x120", "name": "Título da Casa", "address": "Localização da Casa", "rate": "Melhor Lugar para Visitar"},
-      {"thumbnail": "https://via.placeholder.com/120x120", "name": "Título da Casa", "address": "Localização da Casa", "rate": "Melhor Lugar para Visitar"},
-      {"thumbnail": "https://via.placeholder.com/120x120", "name": "Título da Casa", "address": "Localização da Casa", "rate": "Melhor Lugar para Visitar"},
-      {"thumbnail": "https://via.placeholder.com/120x120", "name": "Título da Casa", "address": "Localização da Casa", "rate": "Melhor Lugar para Visitar"},
-      {"thumbnail": "https://via.placeholder.com/120x120", "name": "Título da Casa", "address": "Localização da Casa", "rate": "Melhor Lugar para Visitar"},
-      {"thumbnail": "https://via.placeholder.com/120x120", "name": "Título da Casa", "address": "Localização da Casa", "rate": "Melhor Lugar para Visitar"}
-    ]
+
+function fetchDetailHouse (state = {}, action) {
+  switch (action.type) {
+    case 'FETCH_DETAIL_HOUSE':
+      return action.payload.data.house
+  }
+  return state
 }
 
 const appReducer = combineReducers({
-  houses: fetchHouses
+  houses: fetchHouses,
+  house: fetchDetailHouse
 })
 
 export default appReducer
