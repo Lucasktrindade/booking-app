@@ -7,3 +7,11 @@ export function fetchHouses(place) {
     payload: request
   }
 }
+
+export function fetchDetailHouse (id) {
+  const request = axios.get('http://www.mocky.io/v2/5ba9c53e3100006900c2770e')
+  return {
+    type: 'FETCH_DETAIL_HOUSE',
+    payload: request
+  }
+}
