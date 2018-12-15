@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { fetchDetailHouse } from '../actions'
@@ -11,6 +12,9 @@ class HouseDetail extends Component {
     return (
       <div className="container mx-md mx-auto">
         <h1 className="text-center mt-6 mb-6">HouserGuest</h1>
+        <div className="block mx-md mx-auto mb-4">
+          <Link className="block text-center text-black hover:text-blue-darker" to={'/'}>Voltar</Link>
+        </div>
         <div className="flex items-center">
           <div>
             <img src={this.props.house.bigImage} alt="600x400" />
